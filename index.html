@@ -1,27 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Test Pixel</title>
-  <script>
-      !function(f,b,e,v,n,t,s)
-      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window, document,'script',
-      'https://connect.facebook.net/en_US/fbevents.js');
-      fbq('init', '587660557560617');
-      fbq('track', 'PageView');
-  </script>
-  <noscript>
-      <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=587660557560617&ev=PageView&noscript=1"/>
-  </noscript>
+    <meta charset="UTF-8">
+    <title>¡Bienvenid@s a Ganamos.net!</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Facebook Pixel Code -->
+    <script>
+        !function(f,b,e,v,n,t,s)
+        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+        n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t,s)}(window, document,'script',
+        'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '587660557560617');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+        <img height="1" width="1" style="display:none"
+        src="https://www.facebook.com/tr?id=587660557560617&ev=PageView&noscript=1"/>
+    </noscript>
 </head>
 <body>
-  <h1>Test Pixel</h1>
-  <button onclick="fbq('trackCustom','ClickWhatsAap');alert('Evento enviado')">Test Evento</button>
+    <h1>¡Bienvenid@s a Ganamos.net!</h1>
+    <button id="bonoBtn" style="padding:1em 2em; font-size:1.3em; background:#25d366; color:white; border:none; border-radius:2em;">BONO DE BIENVENIDA</button>
+    <script>
+        document.getElementById('bonoBtn').addEventListener('click', function() {
+            if (typeof fbq === "function") fbq('trackCustom', 'ClickWhatsAap');
+            setTimeout(function() {
+                window.location.href = 'https://wa.me/3413673839';
+            }, 350);
+        });
+    </script>
 </body>
 </html>

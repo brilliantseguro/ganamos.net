@@ -23,18 +23,6 @@
         src="https://www.facebook.com/tr?id=587660557560617&ev=PageView&noscript=1"/>
     </noscript>
 
-    <!-- Google Analytics 4 / gtag.js (TRACKING CORRECTO EN MOVILES Y DESKTOP) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-
-        // Modo debug para ver eventos en tiempo real durante tus pruebas
-        gtag('config', 'G-XXXXXXXXXX', { 'debug_mode': true }); 
-    </script>
-    <!-- FIN GA4 -->
-
     <style>
         html, body { margin: 0; padding: 0; font-family: 'Montserrat', Arial, sans-serif; background: #fff; color: #111;}
         .main-container { max-width: 430px; margin: 0 auto; padding: 0 10px 40px 10px;}
@@ -100,18 +88,10 @@
         BONO ACTIVO AL 100% - ¡Solicítalo ahora por WhatsApp!
     </div>
     <script>
-        // TRACK y REDIRECCIÓN (WhatsApp)
+        // SOLO TRACKING DE FACEBOOK PIXEL PARA EL BOTÓN (MÓVIL Y DESKTOP)
         document.getElementById('bonoBtn').addEventListener('click', function() {
-            // Facebook Pixel Custom Event
-            if (typeof fbq === "function") fbq('trackCustom', 'ClickWhatsApp');
-            // Google Analytics 4 evento estándar de WhatsApp
-            if (typeof gtag === "function") {
-                gtag('event', 'click', {
-                    'event_category': 'engagement',
-                    'event_label': 'WhatsApp Bonificado',
-                    'event_name': 'whatsapp_click', // Puedes usarlo en GA4
-                    'value': 1
-                });
+            if (typeof fbq === "function") {
+                fbq('trackCustom', 'ClickWhatsApp');
             }
             setTimeout(function() {
                 window.location.href = 'https://wa.me/3413673839';

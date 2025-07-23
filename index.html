@@ -1,253 +1,27 @@
 <!DOCTYPE html>
-<html lang="es">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>¡Bienvenid@s a Ganamos.net!</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Facebook Pixel Code -->
-    <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '587660557560617');
-        fbq('track', 'PageView');
-    </script>
-    <noscript>
-        <img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=587660557560617&ev=PageView&noscript=1"/>
-    </noscript>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
-        body {
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            font-family: 'Montserrat', Arial, sans-serif;
-            background: #000;
-            position: relative;
-            overflow: hidden;
-        }
-        body::before, body::after {
-            content: '';
-            position: absolute;
-            left: 0; top: 0; width: 100vw; height: 100vh;
-            pointer-events: none; z-index: 0;
-        }
-        body::before {
-            background: repeating-linear-gradient(
-                45deg,
-                #a34cff33,
-                #a34cff33 10px,
-                transparent 10px,
-                transparent 30px
-            );
-            opacity: 0.6;
-        }
-        body::after {
-            background: repeating-linear-gradient(
-                -45deg,
-                #bbbbbb33,
-                #bbbbbb33 8px,
-                transparent 8px,
-                transparent 28px
-            );
-            opacity: 0.4;
-        }
-        .container {
-            position: relative;
-            z-index: 2;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .logo-wrap {
-            margin-bottom: 1rem;
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .logo-glow {
-            position: absolute;
-            top: 50%; left: 50%;
-            transform: translate(-50%, -50%);
-            width: 170px; height: 170px;
-            border-radius: 50%;
-            background: radial-gradient(circle, #a34cff88 0%, #000 80%);
-            filter: blur(18px);
-            z-index: 0;
-        }
-        .logo-img {
-            width: 120px; height: 120px;
-            position: relative;
-            z-index: 1;
-        }
-        .titulo {
-            color: #fff;
-            font-size: 2.3rem;
-            font-weight: bold;
-            margin-bottom: 1.2rem;
-            text-align: center;
-            text-shadow: 0 3px 12px #a34cff66;
-        }
-        @keyframes shine {
-            0% { box-shadow: 0 0 20px 8px #25d366cc, 0 0 60px 16px #a34cff55; }
-            50% { box-shadow: 0 0 50px 28px #25d366cc, 0 0 80px 36px #a34cff99; }
-            100% { box-shadow: 0 0 20px 8px #25d366cc, 0 0 60px 16px #a34cff55; }
-        }
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            30% { transform: scale(1.09) rotate(-2deg);}
-            60% { transform: scale(0.96) rotate(2deg);}
-        }
-        .btn-bono {
-            background: linear-gradient(90deg, #25d366 60%, #34e089 100%);
-            color: #fff;
-            border: none;
-            border-radius: 2rem;
-            font-size: 1.4rem;
-            font-weight: 700;
-            padding: 1.2rem 2.8rem;
-            margin-bottom: 2.5rem;
-            animation: shine 1.2s infinite, pulse 1.4s infinite;
-            cursor: pointer;
-            outline: none;
-            letter-spacing: 1.2px;
-            position: relative;
-            overflow: hidden;
-            display: inline-block;
-            text-decoration: none;
-        }
-        .btn-bono:after {
-            content: "";
-            position: absolute;
-            left: -75%;
-            top: 0;
-            width: 50%;
-            height: 100%;
-            background: linear-gradient(120deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0.2) 100%);
-            transform: skewX(-24deg);
-            animation: shine-effect 1.7s infinite linear;
-        }
-        @keyframes shine-effect {
-            0% { left: -75%; }
-            100% { left: 130%; }
-        }
-        .btn-bono:active { transform: scale(0.97); }
-        .info-carteles {
-            width: 100%;
-            max-width: 700px;
-            display: flex;
-            flex-direction: row;
-            gap: 1rem;
-            margin-bottom: 2rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        .cartel {
-            background: rgba(255,255,255,0.90);
-            color: #222;
-            font-size: 0.95rem;
-            font-weight: 700;
-            border-radius: 0.9rem;
-            padding: 0.75rem 1.05rem;
-            box-shadow: 0 2px 8px #a34cff26;
-            display: flex;
-            align-items: center;
-            gap: 0.5em;
-            border: 1.5px solid #a34cff66;
-            min-width: 200px;
-            max-width: 280px;
-            margin-bottom: 0.4rem;
-        }
-        .cartel span { font-size: 1.35em; margin-right: 0.35em;}
-        .explicacion {
-            font-size: 0.96em;
-            font-weight: 500;
-            color: #4a0080;
-            margin-left: 0.4em;
-        }
-        @media (max-width: 700px) {
-            .info-carteles { flex-direction: column; align-items: center; gap: 0.7rem;}
-            .cartel { min-width: 160px; font-size: 0.9rem;}
-            .explicacion { font-size: 0.9em;}
-        }
-        @media (max-width: 600px) {
-            .logo-img { width: 82px; height: 82px; }
-            .logo-glow { width: 110px; height: 110px; }
-            .titulo { font-size: 1.25rem; }
-            .btn-bono { font-size: 1.04rem; padding: 0.8rem 1.5rem;}
-            .cartel { min-width: 140px; font-size: 0.88rem;}
-            .explicacion { font-size: 0.85em;}
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Test Pixel</title>
+  <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '587660557560617');
+      fbq('track', 'PageView');
+  </script>
+  <noscript>
+      <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=587660557560617&ev=PageView&noscript=1"/>
+  </noscript>
 </head>
 <body>
-    <div class="container">
-        <div class="logo-wrap">
-            <div class="logo-glow"></div>
-            <img src="logo-04.png" alt="Logo Ganamos" class="logo-img" />
-        </div>
-        <div class="titulo">¡Bienvenid@s a Ganamos.net!</div>
-        <a
-            href="https://wa.me/3413673839"
-            class="btn-bono"
-            id="bonoBtn"
-            target="_blank"
-            rel="noopener"
-        >
-            BONO DE BIENVENIDA
-        </a>
-        <div class="info-carteles">
-            <div class="cartel">
-                <span>⚡</span>
-                Mínimo de carga: <b>$2000</b>
-                <span class="explicacion">- podés jugar a partir de $2000ARS y ganar sin límites</span>
-            </div>
-            <div class="cartel">
-                <span>💸</span>
-                Mínimo de retiro: <b>$4000</b>
-                <span class="explicacion">- podés retirar a partir de $4000ARS libremente</span>
-            </div>
-        </div>
-    </div>
-    <script>
-        // Solución robusta: dispara pixel y luego redirige, compatible con móviles y desktop.
-        function trackAndGoToWhatsapp(e) {
-            e.preventDefault();
-            // Disparar el evento del Pixel
-            if (typeof fbq === 'function') {
-                fbq('trackCustom', 'ClickWhatsAap', {number: '3413673839'});
-            }
-            // Pequeña espera para asegurar que se envía el evento antes de navegar (100-200ms)
-            setTimeout(function() {
-                window.open('https://wa.me/3413673839', '_blank');
-            }, 180);
-        }
-
-        // Listeners para móviles y PC
-        var bonoBtn = document.getElementById('bonoBtn');
-        bonoBtn.addEventListener('click', trackAndGoToWhatsapp, false);
-        bonoBtn.addEventListener('touchend', trackAndGoToWhatsapp, false);
-
-        // Previene doble trigger en algunos navegadores móviles
-        let lastTouch = 0;
-        bonoBtn.addEventListener('touchstart', function() {
-            lastTouch = Date.now();
-        });
-        bonoBtn.addEventListener('click', function(e) {
-            if(Date.now() - lastTouch < 500) {
-                e.preventDefault();
-                return false;
-            }
-        });
-    </script>
+  <h1>Test Pixel</h1>
+  <button onclick="fbq('trackCustom','ClickWhatsAap');alert('Evento enviado')">Test Evento</button>
 </body>
 </html>

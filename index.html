@@ -23,16 +23,16 @@
   </noscript>
 </head>
 <body>
-  <button id="whatsappBtn">Probar Pixel</button>
-  <script>
-    document.getElementById('whatsappBtn').addEventListener('click', function() {
-      if (typeof fbq === "function") {
-        fbq('trackCustom', 'ClickWhatsApp');
-      }
-      setTimeout(function() {
-        window.location.href = 'https://wa.me/3413673839';
-      }, 700);
+<button class="bonus-btn" id="bonoBtn">...</button>
+ <script>
+    document.getElementById('bonoBtn').addEventListener('click', function() {
+        if (typeof fbq === "function") {
+            fbq('trackCustom', 'ClickWhatsApp');
+        }
+        setTimeout(function() {
+            window.location.href = 'https://wa.me/3413673839';
+        }, 700);
     });
-  </script>
+</script>
 </body>
 </html>

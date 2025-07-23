@@ -21,7 +21,6 @@
         <img height="1" width="1" style="display:none"
         src="https://www.facebook.com/tr?id=587660557560617&ev=PageView&noscript=1"/>
     </noscript>
-    <!-- End Facebook Pixel Code -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
         body {
@@ -123,6 +122,8 @@
             letter-spacing: 1.2px;
             position: relative;
             overflow: hidden;
+            display: inline-block;
+            text-decoration: none;
         }
         .btn-bono:after {
             content: "";
@@ -195,7 +196,15 @@
             <img src="logo-04.png" alt="Logo Ganamos" class="logo-img" />
         </div>
         <div class="titulo">¡Bienvenid@s a Ganamos.net!</div>
-        <button class="btn-bono" id="bonoBtn">BONO DE BIENVENIDA</button>
+        <a
+            href="https://wa.me/3413673839"
+            class="btn-bono"
+            id="bonoBtn"
+            target="_blank"
+            rel="noopener"
+        >
+            BONO DE BIENVENIDA
+        </a>
         <div class="info-carteles">
             <div class="cartel">
                 <span>⚡</span>
@@ -210,26 +219,35 @@
         </div>
     </div>
     <script>
-        // Para asegurar tracking en todos los dispositivos y navegadores
-        function trackWhatsappEvent() {
+        // Solución robusta: dispara pixel y luego redirige, compatible con móviles y desktop.
+        function trackAndGoToWhatsapp(e) {
+            e.preventDefault();
+            // Disparar el evento del Pixel
             if (typeof fbq === 'function') {
                 fbq('trackCustom', 'ClickWhatsAap', {number: '3413673839'});
             }
-        }
-        // Event listeners para click/touch/tap en el botón (unificados y robustos)
-        function openWhatsAppAndTrack(e) {
-            e.preventDefault();
-            trackWhatsappEvent();
-            // Pequeño delay para el pixel (mejora tracking)
+            // Pequeña espera para asegurar que se envía el evento antes de navegar (100-200ms)
             setTimeout(function() {
                 window.open('https://wa.me/3413673839', '_blank');
-            }, 150);
-            return false;
+            }, 180);
         }
-        const bonoBtn = document.getElementById('bonoBtn');
-        bonoBtn.addEventListener('click', openWhatsAppAndTrack, false);
-        bonoBtn.addEventListener('touchstart', openWhatsAppAndTrack, false);
-        bonoBtn.addEventListener('pointerup', openWhatsAppAndTrack, false);
+
+        // Listeners para móviles y PC
+        var bonoBtn = document.getElementById('bonoBtn');
+        bonoBtn.addEventListener('click', trackAndGoToWhatsapp, false);
+        bonoBtn.addEventListener('touchend', trackAndGoToWhatsapp, false);
+
+        // Previene doble trigger en algunos navegadores móviles
+        let lastTouch = 0;
+        bonoBtn.addEventListener('touchstart', function() {
+            lastTouch = Date.now();
+        });
+        bonoBtn.addEventListener('click', function(e) {
+            if(Date.now() - lastTouch < 500) {
+                e.preventDefault();
+                return false;
+            }
+        });
     </script>
 </body>
 </html>

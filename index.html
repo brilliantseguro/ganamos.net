@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <title>Plataforma Verificada - Ganamos.net</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!-- Facebook Pixel Code -->
     <script>
-        // Pixel nativo recomendado por Meta
         !function(f,b,e,v,n,t,s)
         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
         n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -22,146 +22,41 @@
         <img height="1" width="1" style="display:none"
         src="https://www.facebook.com/tr?id=587660557560617&ev=PageView&noscript=1"/>
     </noscript>
+
+    <!-- Google Analytics 4 / gtag.js (TRACKING CORRECTO EN MOVILES Y DESKTOP) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        // Modo debug para ver eventos en tiempo real durante tus pruebas
+        gtag('config', 'G-XXXXXXXXXX', { 'debug_mode': true }); 
+    </script>
+    <!-- FIN GA4 -->
+
     <style>
-        html, body {
-            margin: 0; padding: 0;
-            font-family: 'Montserrat', Arial, sans-serif;
-            background: #fff;
-            color: #111;
-        }
-        .main-container {
-            max-width: 430px;
-            margin: 0 auto;
-            padding: 0 10px 40px 10px;
-        }
-        .logo-principal {
-            display: block;
-            margin: 34px auto 18px auto;
-            width: 170px;
-            max-width: 92vw;
-            filter: drop-shadow(0 0 25px #a34cff99);
-            border-radius: 38px;
-        }
-        .check {
-            font-size: 2.6rem;
-            vertical-align: middle;
-            margin-right: 0.18em;
-        }
-        .title-main {
-            font-size: 2rem;
-            font-weight: bold;
-            text-align: center;
-            margin-bottom: 0.3em;
-        }
+        html, body { margin: 0; padding: 0; font-family: 'Montserrat', Arial, sans-serif; background: #fff; color: #111;}
+        .main-container { max-width: 430px; margin: 0 auto; padding: 0 10px 40px 10px;}
+        .logo-principal { display: block; margin: 34px auto 18px auto; width: 170px; max-width: 92vw; filter: drop-shadow(0 0 25px #a34cff99); border-radius: 38px;}
+        .check { font-size: 2.6rem; vertical-align: middle; margin-right: 0.18em;}
+        .title-main { font-size: 2rem; font-weight: bold; text-align: center; margin-bottom: 0.3em;}
         .center { text-align: center; }
-        .bonificado {
-            color: #13c100;
-            font-size: 1.45rem;
-            font-weight: bold;
-            text-align: center;
-            margin: 12px 0 22px 0;
-        }
-        .bonificado .gift {
-            font-size: 1.25em;
-            vertical-align: middle;
-        }
-        .bonus-btn {
-            display: block;
-            width: 98%;
-            max-width: 340px;
-            margin: 0 auto 25px auto;
-            padding: 28px 6px 19px 6px;
-            background: #27e01c;
-            border: none;
-            border-radius: 100px;
-            color: #fff;
-            font-size: 1.5rem;
-            font-weight: 700;
-            box-shadow: 0 4px 30px #27e01c66;
-            cursor: pointer;
-            transition: transform 0.1s;
-            text-align: center;
-            animation: shine 1.4s infinite, pulse 1.8s infinite;
-            position: relative;
-            letter-spacing: .1px;
-        }
+        .bonificado { color: #13c100; font-size: 1.45rem; font-weight: bold; text-align: center; margin: 12px 0 22px 0;}
+        .bonificado .gift { font-size: 1.25em; vertical-align: middle;}
+        .bonus-btn { display: block; width: 98%; max-width: 340px; margin: 0 auto 25px auto; padding: 28px 6px 19px 6px; background: #27e01c; border: none; border-radius: 100px; color: #fff; font-size: 1.5rem; font-weight: 700; box-shadow: 0 4px 30px #27e01c66; cursor: pointer; transition: transform 0.1s; text-align: center; animation: shine 1.4s infinite, pulse 1.8s infinite; position: relative; letter-spacing: .1px;}
         .bonus-btn:active { transform: scale(0.97);}
-        @keyframes shine {
-            0% { box-shadow: 0 0 12px 4px #9aff89cc, 0 0 18px 8px #27e01c44; }
-            50% { box-shadow: 0 0 42px 24px #b6ffbbcc, 0 0 36px 24px #27e01c77; }
-            100% { box-shadow: 0 0 12px 4px #9aff89cc, 0 0 18px 8px #27e01c44; }
-        }
-        @keyframes pulse {
-            0%, 100% { transform: scale(1);}
-            60% { transform: scale(1.04);}
-        }
-        .bonus-btn .gift {
-            font-size: 1.1em;
-            vertical-align: middle;
-            margin-left: 0.22em;
-        }
-        .minimo {
-            font-size: 1.2rem;
-            font-weight: bold;
-            text-align: center;
-            margin: 17px 0 12px 0;
-        }
-        .clientes-bar {
-            display: flex;
-            align-items: center;
-            background: #27e01c;
-            color: #fff;
-            border-radius: 18px;
-            padding: 13px 12px;
-            margin: 22px 0;
-            font-size: 1.08rem;
-            font-weight: 600;
-            box-shadow: 0 2px 16px #27e01c26;
-        }
-        .clientes-bar img {
-            border-radius: 50%;
-            width: 2.1em;
-            height: 2.1em;
-            border: 2px solid #fff;
-            margin-right: 9px;
-            margin-left: 2px;
-        }
-        .clientes-bar span {
-            margin-left: 0.6em;
-        }
-        .testimonial {
-            background: #fff;
-            border-radius: 13px;
-            border: 2px solid #ddd;
-            text-align: center;
-            padding: 16px 10px 9px 10px;
-            font-size: 1.11rem;
-            color: #000;
-            margin-bottom: 23px;
-        }
-        .testimonial .stars {
-            color: #ffe600;
-            font-size: 1.4em;
-            margin-top: 4px;
-        }
-        .bottom-bar {
-            width: 100vw;
-            position: fixed;
-            left: 0; bottom: 0;
-            background: #27e01c;
-            color: #fff;
-            font-weight: 600;
-            text-align: center;
-            font-size: 1.09rem;
-            padding: 13px 4vw 10px 4vw;
-            z-index: 99;
-            box-shadow: 0 -3px 16px #27e01c33;
-            letter-spacing: .2px;
-        }
-        .bottom-bar .gift {
-            font-size: 1.1em;
-            vertical-align: middle;
-        }
+        @keyframes shine { 0% { box-shadow: 0 0 12px 4px #9aff89cc, 0 0 18px 8px #27e01c44; } 50% { box-shadow: 0 0 42px 24px #b6ffbbcc, 0 0 36px 24px #27e01c77; } 100% { box-shadow: 0 0 12px 4px #9aff89cc, 0 0 18px 8px #27e01c44; } }
+        @keyframes pulse { 0%, 100% { transform: scale(1);} 60% { transform: scale(1.04);}}
+        .bonus-btn .gift { font-size: 1.1em; vertical-align: middle; margin-left: 0.22em;}
+        .minimo { font-size: 1.2rem; font-weight: bold; text-align: center; margin: 17px 0 12px 0;}
+        .clientes-bar { display: flex; align-items: center; background: #27e01c; color: #fff; border-radius: 18px; padding: 13px 12px; margin: 22px 0; font-size: 1.08rem; font-weight: 600; box-shadow: 0 2px 16px #27e01c26;}
+        .clientes-bar img { border-radius: 50%; width: 2.1em; height: 2.1em; border: 2px solid #fff; margin-right: 9px; margin-left: 2px;}
+        .clientes-bar span { margin-left: 0.6em;}
+        .testimonial { background: #fff; border-radius: 13px; border: 2px solid #ddd; text-align: center; padding: 16px 10px 9px 10px; font-size: 1.11rem; color: #000; margin-bottom: 23px;}
+        .testimonial .stars { color: #ffe600; font-size: 1.4em; margin-top: 4px;}
+        .bottom-bar { width: 100vw; position: fixed; left: 0; bottom: 0; background: #27e01c; color: #fff; font-weight: 600; text-align: center; font-size: 1.09rem; padding: 13px 4vw 10px 4vw; z-index: 99; box-shadow: 0 -3px 16px #27e01c33; letter-spacing: .2px;}
+        .bottom-bar .gift { font-size: 1.1em; vertical-align: middle;}
         @media (max-width: 540px) {
             .main-container { max-width: 99vw;}
             .logo-principal { width: 115px;}
@@ -207,10 +102,20 @@
     <script>
         // TRACK y REDIRECCIÓN (WhatsApp)
         document.getElementById('bonoBtn').addEventListener('click', function() {
-            if (typeof fbq === "function") fbq('trackCustom', 'ClickWhatsAap');
+            // Facebook Pixel Custom Event
+            if (typeof fbq === "function") fbq('trackCustom', 'ClickWhatsApp');
+            // Google Analytics 4 evento estándar de WhatsApp
+            if (typeof gtag === "function") {
+                gtag('event', 'click', {
+                    'event_category': 'engagement',
+                    'event_label': 'WhatsApp Bonificado',
+                    'event_name': 'whatsapp_click', // Puedes usarlo en GA4
+                    'value': 1
+                });
+            }
             setTimeout(function() {
                 window.location.href = 'https://wa.me/3413673839';
-            }, 700); // Ajusta el tiempo si deseas más o menos delay
+            }, 700);
         });
     </script>
 </body>

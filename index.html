@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>¡Bienvenid@s a Ganamos.net!</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <!-- Facebook Pixel Code -->
     <script>
         !function(f,b,e,v,n,t,s)
@@ -21,16 +22,141 @@
         <img height="1" width="1" style="display:none"
         src="https://www.facebook.com/tr?id=587660557560617&ev=PageView&noscript=1"/>
     </noscript>
+    <!-- End Facebook Pixel Code -->
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', Arial, sans-serif;
+            background: url('https://www.ganadoresclub.com/_next/static/media/bg-casinozero.8d37be84.png') no-repeat center center/cover;
+            min-height: 100vh;
+            position: relative;
+            color: #fff;
+        }
+        .fondo-opaco {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background: rgba(0,0,0,0.7);
+            z-index: 1;
+        }
+        .container {
+            position: relative;
+            z-index: 2;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 16px 60px 16px;
+        }
+        .logo {
+            width: 150px;
+            margin-bottom: 25px;
+            filter: drop-shadow(0 0 22px #a34cffaa);
+        }
+        .box {
+            background: rgba(255,255,255,0.12);
+            border-radius: 18px;
+            box-shadow: 0 6px 44px #a34cff55;
+            max-width: 370px;
+            padding: 35px 22px 22px 22px;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+        .box h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 18px;
+            text-shadow: 0 3px 10px #0009, 0 0 6px #a34cff77;
+        }
+        .box p {
+            font-size: 1.09rem;
+            font-weight: 500;
+            margin-bottom: 22px;
+            color: #e2e2e2;
+        }
+        .wa-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(90deg,#25d366 60%,#34e089 100%);
+            border: none;
+            color: #fff;
+            border-radius: 1.8rem;
+            font-size: 1.25rem;
+            font-weight: bold;
+            padding: 1.1rem 1.8rem;
+            cursor: pointer;
+            box-shadow: 0 0 30px #25d36655;
+            margin: 0 auto;
+            transition: transform 0.08s;
+            animation: shine 1.15s infinite, pulse 1.8s infinite;
+            position: relative;
+            outline: none;
+        }
+        .wa-btn img {
+            height: 1.5em;
+            width: 1.5em;
+            margin-right: 0.6em;
+        }
+        .wa-btn:active { transform: scale(0.97);}
+        @keyframes shine {
+            0% { box-shadow: 0 0 12px 2px #25d366cc, 0 0 16px 8px #a34cff55; }
+            50% { box-shadow: 0 0 34px 18px #25d366cc, 0 0 30px 22px #a34cff77; }
+            100% { box-shadow: 0 0 12px 2px #25d366cc, 0 0 16px 8px #a34cff55; }
+        }
+        @keyframes pulse {
+            0%, 100% { transform: scale(1);}
+            50% { transform: scale(1.07);}
+        }
+        .info {
+            margin-top: 17px;
+            font-size: 0.99rem;
+            background: rgba(0,0,0,0.28);
+            color: #ffe600;
+            padding: 11px 12px;
+            border-radius: 11px;
+            font-weight: 700;
+            letter-spacing: .2px;
+            box-shadow: 0 1px 7px #a34cff45;
+        }
+        @media (max-width: 500px) {
+            .box { max-width: 97vw; padding: 20px 4vw; }
+            .logo { width: 100px;}
+            .box h1 { font-size: 1.3rem;}
+        }
+    </style>
 </head>
 <body>
-    <h1>¡Bienvenid@s a Ganamos.net!</h1>
-    <button id="bonoBtn" style="padding:1em 2em; font-size:1.3em; background:#25d366; color:white; border:none; border-radius:2em;">BONO DE BIENVENIDA</button>
+    <div class="fondo-opaco"></div>
+    <div class="container">
+        <img class="logo" src="https://www.ganadoresclub.com/_next/static/media/logo-casinozero.9c8c5913.png" alt="Logo Casino">
+        <div class="box">
+            <h1>¡Bienvenid@s a Ganamos.net!</h1>
+            <p>
+                Descubrí los mejores bonos, juegos y la mejor experiencia online.<br>
+                <b>¡Recibí tu BONO DE BIENVENIDA!</b>
+            </p>
+            <button class="wa-btn" id="waBtn">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+                Reclamar por WhatsApp
+            </button>
+            <div class="info">
+                ⚡ Mínimo de carga: $2000 - podés jugar a partir de $2000ARS y ganar sin límites.<br>
+                💸 Mínimo de retiro: $4000 - podés retirar a partir de $4000ARS libremente.
+            </div>
+        </div>
+    </div>
     <script>
-        document.getElementById('bonoBtn').addEventListener('click', function() {
-            if (typeof fbq === "function") fbq('trackCustom', 'ClickWhatsAap');
+        // TRACK Y REDIRECCIÓN ROBUSTA
+        document.getElementById('waBtn').addEventListener('click', function(e) {
+            if (typeof fbq === 'function') fbq('trackCustom', 'ClickWhatsAap', {number:'3413673839'});
             setTimeout(function() {
                 window.location.href = 'https://wa.me/3413673839';
-            }, 350);
+            }, 400); // Puedes subir el tiempo si quieres (por defecto 400ms)
         });
     </script>
 </body>

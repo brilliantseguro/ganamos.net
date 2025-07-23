@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Facebook Pixel Code -->
     <script>
+        // Pixel nativo recomendado por Meta
         !function(f,b,e,v,n,t,s)
         {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
         n.callMethod.apply(n,arguments):n.queue.push(arguments)};
@@ -28,18 +29,18 @@
             background: #fff;
             color: #111;
         }
-        .top-logo {
-            width: 90vw;
-            max-width: 360px;
-            margin: 30px auto 15px auto;
-            display: block;
-            border-radius: 18px;
-            box-shadow: 0 2px 16px #0003;
-        }
         .main-container {
             max-width: 430px;
             margin: 0 auto;
             padding: 0 10px 40px 10px;
+        }
+        .logo-principal {
+            display: block;
+            margin: 34px auto 18px auto;
+            width: 170px;
+            max-width: 92vw;
+            filter: drop-shadow(0 0 25px #a34cff99);
+            border-radius: 38px;
         }
         .check {
             font-size: 2.6rem;
@@ -52,9 +53,7 @@
             text-align: center;
             margin-bottom: 0.3em;
         }
-        .center {
-            text-align: center;
-        }
+        .center { text-align: center; }
         .bonificado {
             color: #13c100;
             font-size: 1.45rem;
@@ -86,9 +85,7 @@
             position: relative;
             letter-spacing: .1px;
         }
-        .bonus-btn:active {
-            transform: scale(0.97);
-        }
+        .bonus-btn:active { transform: scale(0.97);}
         @keyframes shine {
             0% { box-shadow: 0 0 12px 4px #9aff89cc, 0 0 18px 8px #27e01c44; }
             50% { box-shadow: 0 0 42px 24px #b6ffbbcc, 0 0 36px 24px #27e01c77; }
@@ -167,13 +164,15 @@
         }
         @media (max-width: 540px) {
             .main-container { max-width: 99vw;}
+            .logo-principal { width: 115px;}
             .bonus-btn { font-size: 1.1rem; padding: 16px 2px 11px 2px;}
             .minimo { font-size: 1rem;}
         }
     </style>
 </head>
 <body>
-    <img src="logo.png" alt="Logo" class="top-logo">
+    <!-- Logo principal arriba -->
+    <img src="logo-04.png" alt="Logo principal" class="logo-principal">
 
     <div class="main-container">
         <div class="center">
@@ -206,11 +205,12 @@
         BONO ACTIVO AL 100% - ¡Solicítalo ahora por WhatsApp!
     </div>
     <script>
+        // TRACK y REDIRECCIÓN (WhatsApp)
         document.getElementById('bonoBtn').addEventListener('click', function() {
             if (typeof fbq === "function") fbq('trackCustom', 'ClickWhatsAap');
             setTimeout(function() {
                 window.location.href = 'https://wa.me/3413673839';
-            }, 500); // Puedes subir el tiempo si quieres (por defecto 0.5s)
+            }, 700); // Ajusta el tiempo si deseas más o menos delay
         });
     </script>
 </body>

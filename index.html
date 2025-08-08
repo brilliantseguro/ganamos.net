@@ -1,154 +1,131 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>¡Reclama tu Bono! | Joker Jewels Casino</title>
+  <title>¡Reclama tu Bono! | WhatsApp Redirección</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Pixel Meta -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n; n.push=n; n.loaded=!0; n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '587660557560617');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=587660557560617&ev=PageView&noscript=1"/>
+  </noscript>
   <style>
-    :root {
-      --color-bg: #160020;
-      --color-primary: #00ff90;
-      --color-accent: #ffe657;
-      --color-text: #ffffff;
-      --font-main: 'Montserrat', sans-serif;
-    }
     body {
       margin: 0;
       padding: 0;
-      font-family: var(--font-main);
-      background: linear-gradient(135deg, #29003a, #000);
-      color: var(--color-text);
+      background-color: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
       display: flex;
       flex-direction: column;
+      justify-content: center;
       align-items: center;
+      height: 100vh;
+      color: #075e54;
     }
-    header {
+
+    h1 {
+      font-size: 1.4rem;
       text-align: center;
-      padding: 1.5rem 1rem 0.5rem;
+      padding: 20px;
+      color: #128c7e;
     }
-    header img {
-      max-width: 280px;
-      width: 90vw;
-      height: auto;
-      filter: drop-shadow(0 0 10px #5500aa);
-    }
-    .hero-title {
-      font-size: 2.4rem;
-      font-weight: 900;
-      color: var(--color-accent);
-      text-shadow: 0 0 10px #fff, 0 0 20px #9408ef;
-      margin: 1rem 0 0.5rem;
-    }
-    .hero-subtitle {
-      font-size: 1.2rem;
-      color: var(--color-text);
-      text-shadow: 0 0 10px #0008;
-      margin-bottom: 2rem;
-    }
-    .cta-button {
-      background: linear-gradient(90deg, var(--color-primary), #00c860);
-      color: #000;
-      font-weight: 800;
-      font-size: 1.2rem;
-      border: none;
-      border-radius: 2rem;
-      padding: 0.9rem 2rem;
-      box-shadow: 0 0 18px #00ff90bb;
-      cursor: pointer;
-      transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .cta-button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 25px #00ff90;
-    }
-    .bonus-banner {
-      margin: 2rem auto 1rem;
-      font-size: 2.2rem;
-      font-weight: 900;
-      text-align: center;
-      color: var(--color-text);
-      text-shadow: 0 0 15px #00ffffaa;
-    }
-    .timer-section {
-      width: 90%;
-      max-width: 400px;
-      background: #fff2;
-      border-radius: 1rem;
-      padding: 1rem;
-      text-align: center;
-      margin-top: 1rem;
-    }
-    .timer-label {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-    .timer-countdown {
-      font-size: 1.5rem;
+
+    .claim-btn {
+      padding: 20px 40px;
+      font-size: 1.6rem;
       font-weight: bold;
-      color: var(--color-accent);
+      color: #fff;
+      background-color: #25D366;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+      transition: background-color 0.2s ease;
     }
-    footer {
-      margin-top: 3rem;
-      padding-bottom: 2rem;
-      text-align: center;
+
+    .claim-btn:disabled {
+      background-color: #a8daba;
+      cursor: wait;
     }
-    footer img {
-      max-width: 180px;
-      filter: drop-shadow(0 0 12px #0008);
+
+    .claim-btn:hover:not(:disabled) {
+      background-color: #20c15c;
     }
-    @media (max-width: 480px) {
-      .hero-title { font-size: 2rem; }
-      .bonus-banner { font-size: 1.8rem; }
-      .cta-button { font-size: 1rem; padding: 0.8rem 1.6rem; }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #999;
     }
   </style>
 </head>
 <body>
-  <header>
-    <img src="joker-cropped.png" alt="Joker's Jewels">
-    <h1 class="hero-title">¡Bienvenid@s a Ganamos.net!</h1>
-    <p class="hero-subtitle">Activa tu bono exclusivo en segundos</p>
-  </header>
 
-  <button class="cta-button" onclick="handleClaimClick()">¡RECLAMA TU BONO!</button>
+  <h1>¡Estás a un paso de tu bono exclusivo del 20%!</h1>
 
-  <div class="bonus-banner">🎁 20% EXTRA EN TU CARGA 🎉</div>
+  <button id="claimBtn" class="claim-btn">
+    Reclama tu bono del 20%
+  </button>
 
-  <section class="timer-section">
-    <div class="timer-label">Tiempo restante para reclamar:</div>
-    <div class="timer-countdown" id="timelineTime">30s</div>
-  </section>
-
-  <footer>
-    <img src="pngcortado-removebg-preview.png" alt="Ganamos.net">
-  </footer>
+  <div class="footer">
+    Serás redirigido a WhatsApp
+  </div>
 
   <script>
     const whatsappNumber = "3413673839";
-    const whatsappLink = `https://wa.me/${whatsappNumber}?text=Hola,%20quiero%20carg4r%20en%20su%20plataforma`;
+    const whatsappLink = `https://wa.me/${whatsappNumber}?text=Hola!%20Quiero%20reclamar%20mi%20bono%20de%20casino`;
 
-    function handleClaimClick() {
-      const btn = document.querySelector('.cta-button');
-      btn.textContent = 'Redirigiendo a WhatsApp...';
+    function handleClaimClick(e) {
+      if (e) e.preventDefault();
+      const btn = document.getElementById('claimBtn');
+      btn.innerText = 'Redirigiendo a WhatsApp...';
       btn.disabled = true;
-      setTimeout(() => {
-        if (typeof fbq === 'function') {
-          fbq('trackCustom', 'ClickWhatsAap');
-        }
+
+      setTimeout(function(){
         window.location.href = whatsappLink;
       }, 2500);
+
+      // Pixel Meta
+      if (typeof fbq === 'function') {
+        fbq('trackCustom', 'ClickWhatsAap');
+      }
+
+      // Conversion API
+      try {
+        const eventData = {
+          event_name: 'ClickWhatsAap',
+          event_source_url: window.location.href,
+          user_data: {
+            client_user_agent: navigator.userAgent
+          }
+        };
+        const blob = new Blob([JSON.stringify(eventData)], {type: 'application/json'});
+        if (navigator.sendBeacon) {
+          navigator.sendBeacon('https://conversion-api-pipe.vercel.app/api/conversion', blob);
+        } else {
+          fetch('https://conversion-api-pipe.vercel.app/api/conversion', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(eventData)
+          });
+        }
+      } catch (err) {}
     }
 
-    let timeLeft = 30;
-    const timelineTime = document.getElementById('timelineTime');
-    function updateTimeline() {
-      timeLeft -= 1;
-      timelineTime.textContent = timeLeft > 0 ? `${timeLeft}s` : '¡Finalizó!';
-      if(timeLeft > 0) setTimeout(updateTimeline, 1000);
-    }
-    setTimeout(updateTimeline, 1000);
+    document.getElementById('claimBtn').addEventListener('click', handleClaimClick, {passive:false});
+    document.getElementById('claimBtn').addEventListener('touchstart', handleClaimClick, {passive:true});
   </script>
 </body>
 </html>

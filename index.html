@@ -2,8 +2,9 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>¡Reclama tu Bono! | WhatsApp Redirección</title>
+  <title>Reclama tu bono del 20% | WhatsApp Casino</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <!-- Pixel Meta -->
   <script>
     !function(f,b,e,v,n,t,s)
@@ -21,66 +22,103 @@
     <img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=587660557560617&ev=PageView&noscript=1"/>
   </noscript>
+
   <style>
     body {
       margin: 0;
-      padding: 0;
+      font-family: system-ui, sans-serif;
       background-color: #ffffff;
-      font-family: 'Segoe UI', sans-serif;
+      color: #111;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      color: #075e54;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .wa-icon {
+      width: 72px;
+      height: 72px;
+      margin-bottom: 20px;
     }
 
     h1 {
       font-size: 1.4rem;
-      text-align: center;
-      padding: 20px;
       color: #128c7e;
+      margin-bottom: 10px;
     }
 
-    .claim-btn {
-      padding: 20px 40px;
-      font-size: 1.6rem;
+    .subtitle {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .cta {
       font-weight: bold;
-      color: #fff;
+      color: #128c7e;
+      margin-bottom: 20px;
+      font-size: 1.15rem;
+    }
+
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
       background-color: #25D366;
+      color: white;
+      font-size: 1.1rem;
+      font-weight: 600;
       border: none;
-      border-radius: 10px;
+      border-radius: 8px;
+      padding: 14px 24px;
+      text-decoration: none;
       cursor: pointer;
-      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
       transition: background-color 0.2s ease;
+      box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3);
     }
 
-    .claim-btn:disabled {
-      background-color: #a8daba;
-      cursor: wait;
-    }
-
-    .claim-btn:hover:not(:disabled) {
+    .whatsapp-btn:hover {
       background-color: #20c15c;
     }
 
-    .footer {
+    .whatsapp-btn svg {
+      width: 24px;
+      height: 24px;
+      margin-right: 10px;
+      fill: white;
+    }
+
+    .footer-note {
       margin-top: 40px;
-      font-size: 0.9rem;
-      color: #999;
+      font-size: 0.85rem;
+      color: #888;
     }
   </style>
 </head>
 <body>
 
-  <h1>¡Estás a un paso de tu bono exclusivo del 20%!</h1>
+  <!-- Ícono WhatsApp -->
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" class="wa-icon" loading="lazy">
 
-  <button id="claimBtn" class="claim-btn">
-    Reclama tu bono del 20%
+  <!-- Título personalizado -->
+  <h1>Estás por chatear con nosotros en WhatsApp</h1>
+  <p class="subtitle">Reclama ahora tu <strong>bono del 20%</strong> exclusivo para jugadores de <strong>casino online</strong>.</p>
+
+  <!-- Llamado a la acción -->
+  <p class="cta">Haz clic para continuar al chat y activar tu bono 🎁</p>
+
+  <!-- Botón realista WhatsApp -->
+  <button class="whatsapp-btn" onclick="handleClaimClick(event)">
+    <svg viewBox="0 0 32 32">
+      <path d="M16.003 2.003C8.276 2.003 2 8.276 2 15.997c0 2.722.795 5.238 2.144 7.36L2 30l6.825-2.112A13.91 13.91 0 0 0 16.003 30c7.727 0 14-6.273 14-14.003S23.73 2.003 16.003 2.003zm0 25.454c-2.234 0-4.321-.645-6.072-1.76l-.433-.27-4.048 1.253 1.285-3.943-.283-.451a11.372 11.372 0 0 1-1.758-6.028c0-6.263 5.097-11.36 11.36-11.36s11.36 5.097 11.36 11.36c0 6.263-5.097 11.36-11.36 11.36zm6.174-8.526c-.338-.169-2.003-.986-2.314-1.1-.31-.113-.537-.169-.763.17-.226.338-.876 1.1-1.074 1.325-.197.226-.394.253-.732.084-.338-.17-1.428-.526-2.72-1.676-1.006-.898-1.684-2.007-1.88-2.345-.197-.338-.022-.521.147-.69.151-.15.338-.394.507-.592.17-.197.226-.338.338-.563.113-.226.056-.422-.028-.59-.085-.169-.763-1.84-1.046-2.52-.276-.662-.557-.57-.763-.58l-.65-.011c-.226 0-.59.084-.897.394s-1.18 1.152-1.18 2.809c0 1.657 1.208 3.259 1.376 3.484.169.226 2.381 3.629 5.77 5.088.807.348 1.438.557 1.93.712.811.257 1.549.221 2.133.135.651-.097 2.003-.819 2.288-1.611.282-.787.282-1.462.197-1.611-.084-.15-.31-.237-.648-.406z"/>
+    </svg>
+    Ir a WhatsApp
   </button>
 
-  <div class="footer">
-    Serás redirigido a WhatsApp
+  <div class="footer-note">
+    Redireccionando desde bono-casino.com
   </div>
 
   <script>
@@ -89,15 +127,8 @@
 
     function handleClaimClick(e) {
       if (e) e.preventDefault();
-      const btn = document.getElementById('claimBtn');
-      btn.innerText = 'Redirigiendo a WhatsApp...';
-      btn.disabled = true;
 
-      setTimeout(function(){
-        window.location.href = whatsappLink;
-      }, 2500);
-
-      // Pixel Meta
+      // Seguimiento Pixel
       if (typeof fbq === 'function') {
         fbq('trackCustom', 'ClickWhatsAap');
       }
@@ -122,10 +153,13 @@
           });
         }
       } catch (err) {}
-    }
 
-    document.getElementById('claimBtn').addEventListener('click', handleClaimClick, {passive:false});
-    document.getElementById('claimBtn').addEventListener('touchstart', handleClaimClick, {passive:true});
+      // Redirigir
+      setTimeout(() => {
+        window.location.href = whatsappLink;
+      }, 1800);
+    }
   </script>
+
 </body>
 </html>

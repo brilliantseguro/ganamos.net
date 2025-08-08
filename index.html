@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Reclama tu bono del 20% | WhatsApp Casino</title>
+  <title>Reclama tu bono del 20% | WhatsApp</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <!-- Pixel Meta -->
@@ -112,7 +112,7 @@
     }
 
     .trust-copy {
-      margin-top: 20px;
+      margin-top: 16px;
       font-size: 0.95rem;
       color: #666;
     }
@@ -131,7 +131,7 @@
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" class="wa-icon" loading="lazy">
 
     <h1>¡Hablemos por WhatsApp!</h1>
-    <p class="subtitle">Reclama tu <strong>bono del 20%</strong> exclusivo para <strong>casino online</strong></p>
+    <p class="subtitle">Reclama tu <strong>bono del 20%</strong> exclusivo para <strong>jugadores online</strong></p>
 
     <p class="urgency">⏰ Solo por hoy</p>
     <p class="cta">Activa tu bono + giros gratis 🎰</p>
@@ -141,19 +141,43 @@
       Ir a WhatsApp
     </button>
 
+    <!-- 👇 NUEVAS SECCIONES ESTÉTICAS DE CONFIANZA 👇 -->
+
     <div class="trust-copy">
       Sin registro. Chateá directo con un asesor de bonos.
     </div>
 
+    <div class="trust-copy">
+      ✅ Más de <strong>12.000 jugadores activos</strong> confían en nosotros cada mes.
+    </div>
+
+    <div class="trust-copy" style="font-style: italic; color: #444; margin-top: 12px;">
+      “Me atendieron por WhatsApp en segundos y el bono se activó al toque. ¡Ya estoy ganando!”<br>
+      <span style="font-size: 0.8rem; color: #999;">– Carlos R., Rosario</span>
+    </div>
+
+    <div class="trust-copy" style="margin-top: 16px;">
+      🔒 Plataforma segura | 💼 Operador autorizado desde 2018
+    </div>
+
+    <div class="trust-copy" style="margin-top: 8px;">
+      <img src="https://img.icons8.com/emoji/48/lock-emoji.png" alt="Seguro" width="20" height="20" style="vertical-align: middle;">
+      <img src="https://img.icons8.com/emoji/48/check-mark-emoji.png" alt="Verificado" width="20" height="20" style="vertical-align: middle;">
+      <img src="https://img.icons8.com/color/48/whatsapp--v1.png" alt="WhatsApp" width="20" height="20" style="vertical-align: middle;">
+    </div>
+
+    <!-- 👆 FIN de bloques agregados 👆 -->
+
     <div class="footer-note">
-      bono-casino.com
+      tubonovip.com
     </div>
 
   </div>
 
   <script>
     const whatsappNumber = "3413673839";
-    const whatsappLink = `https://wa.me/${whatsappNumber}?text=Hola!%20Quiero%20reclamar%20mi%20bono%20de%20casino`;
+    const whatsappMessage = "Hola vi su anuncio y quiero jug4r! Mi codigo para el 20% EXTRA es: BRILL.193";
+    const whatsappLink = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
 
     function handleClaimClick(e) {
       if (e) e.preventDefault();

@@ -1,264 +1,154 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WhatsApp Bonos</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-  <!-- Meta Pixel Code -->
-  <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src='https://connect.facebook.net/en_US/fbevents.js';
-    s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script');
-    fbq('init', '587660557560617');
-    fbq('track', 'PageView');
-  </script>
-  <noscript>
-    <img height="1" width="1" style="display:none"
-      src="https://www.facebook.com/tr?id=587660557560617&ev=PageView&noscript=1"/>
-  </noscript>
-  <!-- End Meta Pixel Code -->
-
+  <meta charset="UTF-8">
+  <title>¡Reclama tu Bono! | Joker Jewels Casino</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
+    :root {
+      --color-bg: #160020;
+      --color-primary: #00ff90;
+      --color-accent: #ffe657;
+      --color-text: #ffffff;
+      --font-main: 'Montserrat', sans-serif;
+    }
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #1a1a1a;
-      color: #fff;
+      padding: 0;
+      font-family: var(--font-main);
+      background: linear-gradient(135deg, #29003a, #000);
+      color: var(--color-text);
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 20px;
     }
-
     header {
-      margin-top: 30px;
       text-align: center;
+      padding: 1.5rem 1rem 0.5rem;
     }
-
-    .logo-text {
-      color: #D4AF37;
-      font-weight: 700;
-      font-size: 24px;
+    header img {
+      max-width: 280px;
+      width: 90vw;
+      height: auto;
+      filter: drop-shadow(0 0 10px #5500aa);
     }
-
-    hr {
-      width: 100%;
+    .hero-title {
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: var(--color-accent);
+      text-shadow: 0 0 10px #fff, 0 0 20px #9408ef;
+      margin: 1rem 0 0.5rem;
+    }
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: var(--color-text);
+      text-shadow: 0 0 10px #0008;
+      margin-bottom: 2rem;
+    }
+    .cta-button {
+      background: linear-gradient(90deg, var(--color-primary), #00c860);
+      color: #000;
+      font-weight: 800;
+      font-size: 1.2rem;
       border: none;
-      border-top: 1px solid #444;
-      margin: 20px 0;
-    }
-
-    .verified {
-      text-align: center;
-    }
-
-    .verified img {
-      width: 100px;
-      border-radius: 50%;
-      margin: 20px 0;
-    }
-
-    .verified h2 {
-      font-size: 20px;
-      margin: 10px 0;
-    }
-
-    .verified .green {
-      color: #D4AF37;
-      font-weight: 600;
-    }
-
-    .message {
-      background: #2a2a2a;
-      padding: 15px;
-      border-radius: 10px;
-      margin: 20px 0;
-      font-size: 16px;
-      color: #fff;
-    }
-
-    .whatsapp-button {
-      background-color: #D4AF37;
-      color: #1a1a1a;
-      padding: 18px 30px;
-      border-radius: 50px;
-      font-weight: bold;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 20px;
-      font-size: 18px;
-      box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
-      border: none;
+      border-radius: 2rem;
+      padding: 0.9rem 2rem;
+      box-shadow: 0 0 18px #00ff90bb;
       cursor: pointer;
-      position: relative;
-      overflow: hidden;
-      transition: all 0.3s ease;
-      z-index: 1;
-      min-width: 250px;
+      transition: transform 0.2s, box-shadow 0.2s;
     }
-
-    .whatsapp-button::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #bfa437;
-      z-index: -1;
-      transform: scaleX(0);
-      transform-origin: right;
-      transition: transform 0.3s ease;
+    .cta-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 25px #00ff90;
     }
-
-    .whatsapp-button:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 0 15px #D4AF37, 
-                  0 0 25px rgba(212, 175, 55, 0.6),
-                  0 0 35px rgba(212, 175, 55, 0.3);
+    .bonus-banner {
+      margin: 2rem auto 1rem;
+      font-size: 2.2rem;
+      font-weight: 900;
+      text-align: center;
+      color: var(--color-text);
+      text-shadow: 0 0 15px #00ffffaa;
     }
-
-    .whatsapp-button:hover::before {
-      transform: scaleX(1);
-      transform-origin: left;
+    .timer-section {
+      width: 90%;
+      max-width: 400px;
+      background: #fff2;
+      border-radius: 1rem;
+      padding: 1rem;
+      text-align: center;
+      margin-top: 1rem;
     }
-
-    .whatsapp-button:active {
-      transform: translateY(1px);
-    }
-
-    .whatsapp-button i {
-      margin-right: 10px;
-      font-size: 24px;
-    }
-
-    @keyframes pulse {
-      0% {
-        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
-      }
-      70% {
-        box-shadow: 0 0 0 15px rgba(212, 175, 55, 0);
-      }
-      100% {
-        box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
-      }
-    }
-
-    .whatsapp-button.pulse {
-      animation: pulse 2s infinite;
-    }
-
-    .clientes {
-      background-color: #444;
-      color: #fff;
-      padding: 12px 20px;
-      border-radius: 30px;
+    .timer-label {
+      font-size: 1rem;
       font-weight: 600;
-      margin-bottom: 10px;
+      margin-bottom: 0.5rem;
     }
-
-    .trustpilot {
-      font-size: 14px;
-      padding: 8px 15px;
-      border: 1px dashed #999;
-      border-radius: 10px;
-      margin-bottom: 10px;
-      text-align: center;
-      color: #ccc;
-    }
-
-    .trustpilot img {
-      margin-top: 5px;
-      max-width: 120px;
-    }
-
-    .footer {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background: linear-gradient(to right, #bfa437, #D4AF37);
-      color: #1a1a1a;
-      text-align: center;
-      padding: 10px;
+    .timer-countdown {
+      font-size: 1.5rem;
       font-weight: bold;
-      font-size: 14px;
+      color: var(--color-accent);
     }
-
-    @media (max-width: 600px) {
-      .whatsapp-button {
-        font-size: 16px;
-        padding: 16px 25px;
-        min-width: 220px;
-      }
-      .clientes {
-        font-size: 14px;
-        padding: 12px 18px;
-      }
-      .message {
-        font-size: 14px;
-      }
+    footer {
+      margin-top: 3rem;
+      padding-bottom: 2rem;
+      text-align: center;
+    }
+    footer img {
+      max-width: 180px;
+      filter: drop-shadow(0 0 12px #0008);
+    }
+    @media (max-width: 480px) {
+      .hero-title { font-size: 2rem; }
+      .bonus-banner { font-size: 1.8rem; }
+      .cta-button { font-size: 1rem; padding: 0.8rem 1.6rem; }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo-text">WhatsApp Bonos</div>
+    <img src="joker-cropped.png" alt="Joker's Jewels">
+    <h1 class="hero-title">¡Bienvenid@s a Ganamos.net!</h1>
+    <p class="hero-subtitle">Activa tu bono exclusivo en segundos</p>
   </header>
 
-  <hr />
+  <button class="cta-button" onclick="handleClaimClick()">¡RECLAMA TU BONO!</button>
 
-  <section class="verified">
-    <a href="https://wa.me/3413673839" target="_blank" onclick="fbq('trackCustom', 'ClickWhatsApp')">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Logo" width="50" height="50" />
-    </a>
-    <h2>✅ <b>Plataforma Verificada</b> ✅</h2>
-    <p class="green">Casino de Confianza</p>
+  <div class="bonus-banner">🎁 20% EXTRA EN TU CARGA 🎉</div>
+
+  <section class="timer-section">
+    <div class="timer-label">Tiempo restante para reclamar:</div>
+    <div class="timer-countdown" id="timelineTime">30s</div>
   </section>
 
-  <div class="message">
-    Te estamos conectando con nuestro equipo vía WhatsApp.
-  </div>
-
-  <a class="whatsapp-button pulse" 
-     href="https://wa.me/3413673839?text=Quiero%20el%20bono%20del%2020%25" 
-     target="_blank"
-     onclick="fbq('trackCustom', 'ClickWhatsApp')">
-    <i class="fab fa-whatsapp"></i> ¡QUIERO MI BONO!
-  </a>
-
-  <div class="clientes">
-    👥 +10.000 CLIENTES GANANDO todos los días
-  </div>
-
-  <div class="trustpilot">
-    "Excelente" ⭐⭐⭐⭐⭐ Calificación 4.9/5 en Trustpilot<br/>
-    <img src="https://logowik.com/content/uploads/images/trustpilot-stars9095.jpg" alt="Trustpilot" />
-  </div>
-
-  <div class="footer">
-    🎁 BONO ACTIVO - ¡Solicítalo ahora por WhatsApp!
-  </div>
+  <footer>
+    <img src="pngcortado-removebg-preview.png" alt="Ganamos.net">
+  </footer>
 
   <script>
-    const whatsappBtn = document.querySelector('.whatsapp-button');
-    if(whatsappBtn) {
-      whatsappBtn.addEventListener('mouseenter', function() {
-        this.style.transform = 'scale(1.05)';
-      });
-      whatsappBtn.addEventListener('mouseleave', function() {
-        this.style.transform = 'scale(1)';
-      });
+    const whatsappNumber = "3413673839";
+    const whatsappLink = `https://wa.me/${whatsappNumber}?text=Hola,%20quiero%20carg4r%20en%20su%20plataforma`;
+
+    function handleClaimClick() {
+      const btn = document.querySelector('.cta-button');
+      btn.textContent = 'Redirigiendo a WhatsApp...';
+      btn.disabled = true;
+      setTimeout(() => {
+        if (typeof fbq === 'function') {
+          fbq('trackCustom', 'ClickWhatsAap');
+        }
+        window.location.href = whatsappLink;
+      }, 2500);
     }
+
+    let timeLeft = 30;
+    const timelineTime = document.getElementById('timelineTime');
+    function updateTimeline() {
+      timeLeft -= 1;
+      timelineTime.textContent = timeLeft > 0 ? `${timeLeft}s` : '¡Finalizó!';
+      if(timeLeft > 0) setTimeout(updateTimeline, 1000);
+    }
+    setTimeout(updateTimeline, 1000);
   </script>
 </body>
 </html>

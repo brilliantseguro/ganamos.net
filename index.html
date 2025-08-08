@@ -53,14 +53,21 @@
     .subtitle {
       font-size: 1.1rem;
       color: #555;
-      margin-bottom: 30px;
+      margin-bottom: 14px;
+    }
+
+    .urgency {
+      color: #d11;
+      font-weight: bold;
+      font-size: 1rem;
+      margin-bottom: 20px;
     }
 
     .cta {
       font-weight: bold;
       color: #128c7e;
       margin-bottom: 20px;
-      font-size: 1.15rem;
+      font-size: 1.1rem;
     }
 
     .whatsapp-btn {
@@ -90,10 +97,16 @@
       fill: white;
     }
 
+    .trust-copy {
+      margin-top: 14px;
+      font-size: 0.85rem;
+      color: #666;
+    }
+
     .footer-note {
       margin-top: 40px;
-      font-size: 0.85rem;
-      color: #888;
+      font-size: 0.8rem;
+      color: #999;
     }
   </style>
 </head>
@@ -104,10 +117,13 @@
 
   <!-- Título personalizado -->
   <h1>Estás por chatear con nosotros en WhatsApp</h1>
-  <p class="subtitle">Reclama ahora tu <strong>bono del 20%</strong> exclusivo para jugadores de <strong>casino online</strong>.</p>
+  <p class="subtitle">Reclama ahora tu <strong>bono del 20%</strong> exclusivo para <strong>jugadores de casino online</strong>.</p>
 
-  <!-- Llamado a la acción -->
-  <p class="cta">Haz clic para continuar al chat y activar tu bono 🎁</p>
+  <!-- Urgencia -->
+  <p class="urgency">⏰ Bonos disponibles solo hasta hoy</p>
+
+  <!-- CTA mejorado -->
+  <p class="cta">Activa tu bono y recibe también giros gratis 🎰</p>
 
   <!-- Botón realista WhatsApp -->
   <button class="whatsapp-btn" onclick="handleClaimClick(event)">
@@ -116,6 +132,11 @@
     </svg>
     Ir a WhatsApp
   </button>
+
+  <!-- Texto de confianza -->
+  <div class="trust-copy">
+    No se requiere registro previo. Chateá directamente con un asesor.
+  </div>
 
   <div class="footer-note">
     Redireccionando desde bono-casino.com
@@ -128,7 +149,7 @@
     function handleClaimClick(e) {
       if (e) e.preventDefault();
 
-      // Seguimiento Pixel
+      // Pixel Meta
       if (typeof fbq === 'function') {
         fbq('trackCustom', 'ClickWhatsAap');
       }
@@ -154,7 +175,6 @@
         }
       } catch (err) {}
 
-      // Redirigir
       setTimeout(() => {
         window.location.href = whatsappLink;
       }, 1800);
